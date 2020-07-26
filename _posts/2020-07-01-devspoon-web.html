@@ -57,7 +57,7 @@ Already therer is sample folder in www/sample. So user can refer at the folder o
 
 <ol>
 	<li>
-		<p><h3>Make webroot and copy files</h3></p>
+		<p><h2>Make webroot and copy files</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/www
 root# ls
@@ -73,7 +73,7 @@ index.php
 <hr />
 	</li>
 	<li>
-		<p><h3>Make nginx conf file</h3></p>
+		<p><h2>Make nginx conf file</h2></p>
 		<ul>
 			<li>
 				Docker-compose can connect between containers using application name in a docker-compose.yml file.
@@ -112,7 +112,7 @@ devspoons-test1_ng.conf  sample_php_ng.conf
 	</li>
 
 	<li>
-		<p><h3>Make PHP conf file</h3></p>
+		<p><h2>Make PHP conf file</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/config/app-server/php
 root# ls
@@ -134,7 +134,7 @@ devspoons.github.com_php.conf  sample_php.conf
 	</li>
 
 	<li>
-		<p><h3>Run devspoon-web</h3></p>
+		<p><h2>Run devspoon-web</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/compose/web_service/nginx_php
 root# ls
@@ -157,7 +157,7 @@ Already therer is sample folder in www/py37. So user can refer at the folder of 
 
 <ol>
 	<li>
-		<p><h3>Make webroot and copy files</h3></p>
+		<p><h2>Make webroot and copy files</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/www
 root# ls
@@ -167,7 +167,7 @@ py37  sample
 <hr />
 	</li>
 	<li>
-		<p><h3>Make nginx conf file</h3></p>
+		<p><h2>Make nginx conf file</h2></p>
 		<ul>
 			<li>
 				Docker-compose can connect between containers using application name in a docker-compose.yml file.
@@ -206,7 +206,7 @@ devspoons.github.com1_gunicorn_ng.conf
 	</li>
 
 	<li>
-		<p><h3>Update gunicorn executing script</h3></p>
+		<p><h2>Update gunicorn executing script</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/docker/gunicorn
 root# ls
@@ -229,7 +229,7 @@ gunicorn --workers 4 --bind 0.0.0.0:8000 conf.wsgi:application --daemon --reload
 	</li>
 
 	<li>
-		<p><h3>Run devspoon-web</h3></p>
+		<p><h2>Run devspoon-web</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/compose/web_service/nginx_gunicorn
 root# ls
@@ -252,7 +252,7 @@ root# docker-compose up -d
 	
 <ol>
 	<li>
-		<p><h3>Make webroot and copy files</h3></p>
+		<p><h2>Make webroot and copy files</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/www
 root# ls
@@ -262,7 +262,7 @@ py37  sample
 <hr />
 	</li>
 	<li>
-		<p><h3>Make nginx conf file</h3></p>
+		<p><h2>Make nginx conf file</h2></p>
 		<ul>
 			<li>
 				Docker-compose can connect between containers using application name in a docker-compose.yml file.
@@ -301,7 +301,7 @@ devspoons.github.com1_uwsgi_ng.conf
 	</li>
 
 	<li>
-		<p><h3>Update UWSGI executing script</h3></p>
+		<p><h2>Update UWSGI executing script</h2></p>
 		<ul>
 			<li>
 				UWSGI has two of executing ways to run a server using python file and ini file.<br>
@@ -321,7 +321,7 @@ root# vim uwsgi.ini
 	</li>
 
 	<li>
-		<p><h3>Run devspoon-web</h3></p>
+		<p><h2>Run devspoon-web</h2></p>
 {% highlight bash %}
 root# cd devspoon-web/compose/web_service/nginx_uwsgi
 root# ls
@@ -335,7 +335,7 @@ root# docker-compose up -d
 
 <ul>
 	<li>
-		<p><h3>Trace log files</h3></p>
+		<p><h2>Trace log files</h2></p>
 		<ul>
 			<li>
 				Check other log folders. If log option was setting, It will make a file at each folders.<br>
@@ -351,7 +351,7 @@ devspoons.github.com.access.log devspoons.github.com.error.log
 <hr />		
 	</li>
 	<li>
-		<p><h3>Upgrade Http to https</h3></p>
+		<p><h2>Upgrade Http to https</h2></p>
 		<p><strong>Go to manual :</strong> <a href="devspoon-web-https">How to build https with devspoon's web service</a></p>
 <hr />		
 	</li>
