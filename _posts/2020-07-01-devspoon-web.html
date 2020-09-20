@@ -4,7 +4,7 @@ current: post
 cover: assets/images/posts/2020-07-01_10-00-00/devspoon-web-title.png
 navigation: True
 title: How to start devspoon-web solution
-date: 2020-07-01 10:00:00
+date: 2020-09-19 10:00:00
 tags: [Getting started]
 class: post-template
 subclass: 'post'
@@ -183,19 +183,13 @@ conf.d  nginx_conf  nginx_conf.sh  nginx_https_conf.sh  sample_nginx.conf  sampl
 
 root# chmod 777 nginx_conf.sh
 root# ./nginx_conf.sh
-Enter the service web root >/www/py37/django_test/repo
-Entered service web root: /www/py37/django_test/repo
+Enter the service web root >\\/www\\/py37\\/django_test\\/repo
 Enter the service portnumber >80
-Entered service portnumber: 80
 Enter the service domain >devspoons.github.com
-Entered service domain: devspoons.github.com
 Enter the app name >gunicorn-app
-Entered app name: gunicorn-app
 Enter the serviceport
 if you push enter with none, there are no port number >8000
-Entered proxy port: 8000
 Enter the file name >devspoons.github.com1
-Entered file name: devspoons.github.com1
 
 root# cd conf.d/
 root# ls
@@ -210,18 +204,13 @@ devspoons.github.com1_gunicorn_ng.conf
 {% highlight bash %}
 root# cd devspoon-web/docker/gunicorn
 root# ls
-Dockerfile  run.sh
+Dockerfile  run.sh  make_run.sh  sample_run
+# if you want to use sample project, you can use run.sh
 
-root# vim run.sh
-#!/bin/bash
+root# make_run.sh
 
-# update your djang project path
-cd /www/py37/django_test/repo  
-
-# update this line. workers = cpu core * 2
-#  --reload  = this option means if you update django code, gunicorn will restart the server itself
-gunicorn --workers 4 --bind 0.0.0.0:8000 conf.wsgi:application --daemon --reload 
-
+Enter the project path >\\/www\\/shop\\/shop_kings
+Enter the project name >shop_kings
 ...
 
 {% endhighlight %}
@@ -278,19 +267,13 @@ conf.d  nginx_conf  nginx_conf.sh  nginx_https_conf.sh  sample_nginx.conf  sampl
 
 root# chmod 777 nginx_conf.sh
 root# ./nginx_conf.sh
-Enter the service web root >/www/py37/django_test/repo
-Entered service web root: /www/py37/django_test/repo
+Enter the service web root >\\/www\\/py37\\/django_test\\/repo
 Enter the service portnumber >80
-Entered service portnumber: 80
 Enter the service domain >devspoons.github.com
-Entered service domain: devspoons.github.com
 Enter the app name >uwsgi-app
-Entered app name: uwsgi-app
 Enter the serviceport
 if you push enter with none, there are no port number >8000
-Entered proxy port: 8000
 Enter the file name >devspoons.github.com1
-Entered file name: devspoons.github.com1
 
 root# cd conf.d/
 root# ls
@@ -312,9 +295,28 @@ devspoons.github.com1_uwsgi_ng.conf
 {% highlight bash %}
 root# cd devspoon-web/config/app-server/uwsgi
 root# ls
-uwsgi.ini  uwsgi_config.py
+sample_uwsgi.ini uwsgi_conf.sh  uwsgi_config.py
 
-root# vim uwsgi.ini
+root# ./uwsgi_conf.sh
+
+Enter the project path >\\/www\\/shop\\/shop_kings
+Enter the project name >shop_kings
+Enter the service port number >8000
+
+root# ls
+sample_uwsgi.ini uwsgi_conf.sh  uwsgi_config.py  uwsgi.ini
+{% endhighlight %}
+
+{% highlight bash %}
+root# cd devspoon-web/docker/uwsgi
+root# ls
+Dockerfile  run.sh  make_run.sh  sample_run
+# if you want to use sample project, you can use run.sh
+
+root# make_run.sh
+
+Enter the project path >\\/www\\/shop\\/shop_kings
+...
 
 {% endhighlight %}
 <hr />		
